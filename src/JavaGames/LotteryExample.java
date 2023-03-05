@@ -1,3 +1,5 @@
+package JavaGames;
+
 import java.util.*;
 
 public class LotteryExample {
