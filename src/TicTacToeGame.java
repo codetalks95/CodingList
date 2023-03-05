@@ -3,42 +3,58 @@ import java.util.Scanner;
 
 public class TicTacToeGame {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         char[][] board = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
         while (true) {
             playerMove(board);
+            if (hasContestantWon(board, 'X')) {
+                winningNotes(board, 'X', "Player");
+                break;
+            }
             computerMove(board);
+            if (hasContestantWon(board, '0')) {
+                winningNotes(board, 'O', "Computer");
+                break;
+            }
             printBoard(board);
         }
-//        computerMove(board);
+    }
+
+    private static void winningNotes(char[][] board, char symbol, String player) {
+        winningOrLosingNotes(board, symbol, player);
     }
 
     private static void computerMove(char[][] board) {
         Random random = new Random();
         int numberInBoard = random.nextInt(9) + 1;
-        placeMove(board, String.valueOf(numberInBoard), 'O');
+        if (isValidMove(board, numberInBoard)) {
+            placeMove(board, String.valueOf(numberInBoard), 'O');
+        }
     }
 
-    private static boolean isValidMove(char[][] board, int numberInBoard, char symbol) {
-        switch (String.valueOf(numberInBoard)) {
-            case "1" -> board[0][0] = symbol;
-            case "2" -> board[0][1] = symbol;
-            case "3" -> board[0][2] = symbol;
-            case "4" -> board[1][0] = symbol;
-            case "5" -> board[1][1] = symbol;
-            case "6" -> board[1][2] = symbol;
-            case "7" -> board[2][0] = symbol;
-            case "8" -> board[2][1] = symbol;
-            case "9" -> board[2][2] = symbol;
-            default -> System.out.println(":(");
-        }
-        return false;
+    private static boolean isValidMove(char[][] board, int numberInBoard) {
+        return switch (String.valueOf(numberInBoard)) {
+            case "1" -> board[0][0] == ' ';
+            case "2" -> board[0][1] == ' ';
+            case "3" -> board[0][2] == ' ';
+            case "4" -> board[1][0] == ' ';
+            case "5" -> board[1][1] == ' ';
+            case "6" -> board[1][2] == ' ';
+            case "7" -> board[2][0] == ' ';
+            case "8" -> board[2][1] == ' ';
+            case "9" -> board[2][2] == ' ';
+            default -> false;
+        };
     }
 
     private static void playerMove(char[][] board) {
-        System.out.println("Enter the Place for Input");
+        System.out.println("Enter the Place for Input?");
         Scanner scanner = new Scanner(System.in);
-        placeMove(board, String.valueOf(scanner.nextInt()), 'X');
+        int number = scanner.nextInt();
+        if (isValidMove(board, number)) {
+            placeMove(board, String.valueOf(number), 'X');
+        } else {
+            System.out.println("Invalid Move , Please Try Again");
+        }
     }
 
     private static void printBoard(char[][] board) {
@@ -62,5 +78,26 @@ public class TicTacToeGame {
             case "9" -> board[2][2] = symbol;
             default -> System.out.println(":(");
         }
+    }
+
+    private static void winningOrLosingNotes(char[][] board, char symbol, String player) {
+        if (hasContestantWon(board, symbol)) {
+            System.out.println("Yay" + " " + player + " " + "You Have Won");
+        } else {
+            System.out.println("Sorry" + player + " " + "You Have Lost");
+        }
+    }
+
+    private static boolean hasContestantWon(char[][] board, char symbol) {
+        return (board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol) ||
+                (board[1][0] == symbol && board[1][1] == symbol && board[1][2] == symbol) ||
+                (board[2][0] == symbol && board[2][1] == symbol && board[2][2] == symbol) ||
+
+                (board[0][0] == symbol && board[1][0] == symbol && board[2][0] == symbol) ||
+                (board[0][1] == symbol && board[1][1] == symbol && board[2][1] == symbol) ||
+                (board[0][2] == symbol && board[1][2] == symbol && board[2][2] == symbol) ||
+
+                (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) ||
+                (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol);
     }
 }
