@@ -11,7 +11,7 @@ public class TicTacToeGame {
                 break;
             }
             computerMove(board);
-            if (hasContestantWon(board, '0')) {
+            if (hasContestantWon(board, 'O')) {
                 winningNotes(board, 'O', "Computer");
                 break;
             }
@@ -25,9 +25,12 @@ public class TicTacToeGame {
 
     private static void computerMove(char[][] board) {
         Random random = new Random();
-        int numberInBoard = random.nextInt(9) + 1;
-        if (isValidMove(board, numberInBoard)) {
-            placeMove(board, String.valueOf(numberInBoard), 'O');
+        while (true) {
+            int numberInBoard = random.nextInt(9) + 1;
+            if (isValidMove(board, numberInBoard)) {
+                placeMove(board, String.valueOf(numberInBoard), 'O');
+                break;
+            }
         }
     }
 
@@ -83,9 +86,10 @@ public class TicTacToeGame {
     private static void winningOrLosingNotes(char[][] board, char symbol, String player) {
         if (hasContestantWon(board, symbol)) {
             System.out.println("Yay" + " " + player + " " + "You Have Won");
-        } else {
-            System.out.println("Sorry" + player + " " + "You Have Lost");
+        } else if (isBoardFull(board)) {
+            System.out.println("Sorry" + player + " " + "Match is Draw Please try Again");
         }
+        printBoard(board);
     }
 
     private static boolean hasContestantWon(char[][] board, char symbol) {
@@ -99,5 +103,17 @@ public class TicTacToeGame {
 
                 (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) ||
                 (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol);
+    }
+
+    private static boolean isBoardFull(char[][] seats) {
+        final char EMPTY_SEAT = ' ';
+        for (char[] seat : seats) {
+            for (char c : seat) {
+                if (c != EMPTY_SEAT) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
