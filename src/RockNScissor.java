@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class RockNScissor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        List<Integer> winCountIntegers = new ArrayList<>();
+        List<Integer> lossCountIntegers = new ArrayList<>();
+        int winCount = 0, lossCount = 0;
         while (true) {
             char[] sequence = {'r', 'p', 's'};
             Random random = new Random();
@@ -13,9 +18,13 @@ public class RockNScissor {
             char ch = scanner.next().charAt(0);
             if (ch == 'r' || ch == 'p' || ch == 's') {
                 if (match(result, ch)) {
-                    System.out.println("You Win");
+                    winCount++;
+                    winCountIntegers.add(winCount);
+                    System.out.println("You Won" + " " + winCountIntegers.size() + " " + "times.");
                 } else {
-                    System.out.println("You Lose");
+                    lossCount++;
+                    lossCountIntegers.add(lossCount);
+                    System.out.println("You Lost" + " " + lossCountIntegers.size() + " " + "times.");
                 }
             } else {
                 System.out.println("Your Character doesn't match with r,p or s");
