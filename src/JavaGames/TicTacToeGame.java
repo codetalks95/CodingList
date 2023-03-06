@@ -8,9 +8,13 @@ public class TicTacToeGame {
         char[][] board = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
         while (true) {
             playerMove(board);
-            if (hasContestantWon(board, 'X')) {
-                winningNotes(board, 'X', "Player");
-                break;
+            if (!isBoardFull(board)) {
+                if (hasContestantWon(board, 'X')) {
+                    winningNotes(board, 'X', "Player");
+                    break;
+                }
+            } else {
+                System.out.println("The game ended in a tie!");
             }
             computerMove(board);
             if (hasContestantWon(board, 'O')) {
@@ -19,6 +23,7 @@ public class TicTacToeGame {
             }
             printBoard(board);
         }
+
     }
 
     private static void winningNotes(char[][] board, char symbol, String player) {
@@ -107,11 +112,10 @@ public class TicTacToeGame {
                 (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol);
     }
 
-    private static boolean isBoardFull(char[][] seats) {
-        final char EMPTY_SEAT = ' ';
-        for (char[] seat : seats) {
-            for (char c : seat) {
-                if (c != EMPTY_SEAT) {
+    private static boolean isBoardFull(char[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == ' ') {
                     return false;
                 }
             }
