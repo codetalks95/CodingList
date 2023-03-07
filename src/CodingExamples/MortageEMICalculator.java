@@ -1,24 +1,25 @@
 package CodingExamples;
 
 import java.text.NumberFormat;
+import java.util.Random;
 import java.util.Scanner;
 
 public class MortageEMICalculator {
     private static final int MONTHS_IN_YEAR = 12;
 
     public static void main(String[] args) {
+        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the principal amount:?");
-        double principal = scanner.nextDouble();
-        System.out.println("Enter the annual interest rate:?");
-        float annualInterestRate = scanner.nextFloat();
-        System.out.println("Enter the term in years:?");
-        int termInYears = scanner.nextInt();
+        double principal = random.nextDouble(100000);
+        double annualInterestRate = random.nextDouble(30);
+        double termInYears = random.nextDouble(10);
         scanner.close();
 
-        float monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
-        int numberOfPayments = termInYears * MONTHS_IN_YEAR;
-        System.out.println(calculateEMI(principal, monthlyInterestRate, numberOfPayments));
+        double principalPayment = Math.round(principal);
+        double monthlyInterestRate = Math.round(annualInterestRate / MONTHS_IN_YEAR);
+        double numberOfPayments = Math.round(termInYears * MONTHS_IN_YEAR);
+        System.out.println("Principal is" + " " + principalPayment + " " + "rate is" + " " + monthlyInterestRate + " " + "time is" + " " + numberOfPayments);
+        System.out.println(calculateEMI(principalPayment, monthlyInterestRate, numberOfPayments));
     }
 
     private static String calculateEMI(double principal, double monthlyInterestRate, double terms) {
