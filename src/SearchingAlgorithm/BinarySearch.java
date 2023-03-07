@@ -1,24 +1,37 @@
 package SearchingAlgorithm;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] numbers = {1, 3, 5, 7, 8, 9};
-        System.out.println("Binary Search Index Number is  " + "  " + binarySearch(numbers, 9));
+        int[] numbers = new int[4];
+        Random random = new Random();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = random.nextInt(100);
+        }
+        int randomNumber = numbers[new Random().nextInt(numbers.length)];
+        System.out.println("Array of Numbers are" + "  " + Arrays.toString(Arrays.stream(numbers).toArray()));
+        System.out.println("Number Picked By Algorithm" + "  " + randomNumber);
+        System.out.println("Binary Search Number Index is " + "  " + binarySearch(numbers, randomNumber));
     }
 
-    public static int binarySearch(int[] numbers, int number) {
+
+    private static int binarySearch(int[] numbers, int numberToFind) {
         int low = 0;
         int high = numbers.length - 1;
+
         while (low <= high) {
-            int middle = low + high / 2;
-            int middleNumber = numbers[middle];
-            if (middleNumber == number) {
-                return middle;
+            int middlePosition = (low + high) / 2;
+            int middleNumber = numbers[middlePosition];
+
+            if (numberToFind == middleNumber) {
+                return middlePosition;
             }
-            if (number < middleNumber) {
-                high = middle + 1;
+            if (numberToFind < middleNumber) {
+                high = middlePosition - 1;
             } else {
-                low = middle - 1;
+                low = middlePosition + 1;
             }
         }
         return -1;
