@@ -17,19 +17,18 @@ public class BubbleSort {
     }
 
     private static int[] bubbleSort(int[] numbers) {
-        boolean swapped = true;
-        while (swapped) {
-            swapped = false;
+        boolean isSwapped = true;
+        while (isSwapped) {
+            isSwapped = false;
             for (int i = 0; i < numbers.length - 1; i++) {
                 if (numbers[i] > numbers[i + 1]) {
-                    swapped = true;
+                    isSwapped = true;
                     int temp = numbers[i];
                     numbers[i] = numbers[i + 1];
                     numbers[i + 1] = temp;
                 }
             }
         }
-
         return numbers;
     }
 }
