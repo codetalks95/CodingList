@@ -10,7 +10,7 @@ public class MortageEMICalculator {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        double principal = random.nextDouble(100000);
+        double principal = random.nextDouble(1000);
         double annualInterestRate = random.nextDouble(30);
         double termInYears = random.nextDouble(10);
         scanner.close();
