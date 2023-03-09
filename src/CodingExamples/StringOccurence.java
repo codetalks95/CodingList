@@ -13,7 +13,7 @@ public class StringOccurence {
         int count = 0;
         String[] string = str.split(" ");
         for (String s : string) {
-            if (s.equals("test")) {
+            if (s.equals("Test")) {
                 count++;
             }
         }
@@ -21,8 +21,8 @@ public class StringOccurence {
     }
 
     public static String randomSentenceGenerator() {
-        String[] name = {"test", "Deb"};
-        String[] action = {"test", "soccer"};
+        String[] name = {"Test", "Deb", "World"};
+        String[] action = {"Soccer", "Test", "Welcome"};
         int actionLength = action.length;
         List<String> randomNames = new ArrayList<>(Arrays.asList(name));
         Collections.shuffle(randomNames);
