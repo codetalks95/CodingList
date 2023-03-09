@@ -11,10 +11,8 @@ public class QuickSort {
             numbers[i] = random.nextInt(100);
         }
         System.out.println(Arrays.toString(Arrays.stream(numbers).toArray()));
-
         System.out.println("After Sorting");
         quickSort(numbers);
-
     }
 
     private static void quickSort(int[] numbers) {

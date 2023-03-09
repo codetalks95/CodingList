@@ -11,10 +11,8 @@ public class InsertionSort {
             numbers[i] = random.nextInt(100);
         }
         System.out.println(Arrays.toString(Arrays.stream(numbers).toArray()));
-
         System.out.println("After Sorting");
         insertionSort(numbers);
-
     }
 
     private static void insertionSort(int[] numbers) {

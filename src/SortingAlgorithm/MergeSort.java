@@ -11,10 +11,8 @@ public class MergeSort {
             numbers[i] = random.nextInt(100);
         }
         System.out.println(Arrays.toString(Arrays.stream(numbers).toArray()));
-
         System.out.println("After Sorting");
         mergeSort(numbers);
-
     }
 
     private static void mergeSort(int[] numbers) {

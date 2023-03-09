@@ -11,7 +11,6 @@ public class BubbleSort {
             numbers[i] = random.nextInt(100);
         }
         System.out.println(Arrays.toString(Arrays.stream(numbers).toArray()));
-
         System.out.println("After Sorting");
         System.out.println(Arrays.toString(bubbleSort(Arrays.stream(numbers).toArray())));
     }
