@@ -21,7 +21,6 @@ public class LinearSearch {
             if (numbers[i] == numberToFind) {
                 return i;
             }
-
         }
         return -1;
     }
