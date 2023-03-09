@@ -3,16 +3,23 @@ package CodingExamples;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 public class NonRepeatedCharacter {
     public static void main(String[] args) {
+        Map<Character, Integer> map = new HashMap<>();
         String str = generateRandomString();
         System.out.println("Random String is:-" + " " + str);
         char[] chars = str.toCharArray();
         for (char aChar : chars) {
             Map<Character, Integer> maps = nonRepeatedCharacter(str, aChar);
-            System.out.println(maps);
+            for (Character key : maps.keySet()) {
+                if (maps.get(key).equals(1)) {
+                    map.put(key, maps.get(key));
+                }
+            }
         }
+        System.out.println(map);
     }
 
     private static Map<Character, Integer> nonRepeatedCharacter(String str, char chars) {
