@@ -7,9 +7,9 @@ public class Anagram {
         String str = "Care";
         String value = "Race";
         if (anagram(str, value)) {
-            System.out.println("True, This are Anagrams");
+            System.out.println("True,This are Anagrams");
         } else {
-            System.out.println("False, This are not Anagrams");
+            System.out.println("False,This are not Anagrams");
         }
     }
 
