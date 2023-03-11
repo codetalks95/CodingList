@@ -4,7 +4,6 @@ import java.util.*;
 
 public class CountOccurrence {
     public static void main(String[] args) {
-        int count = 0;
         int[] num = new int[5];
         Random random = new Random();
         for (int i = 0; i < num.length; i++) {
