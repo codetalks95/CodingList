@@ -13,7 +13,6 @@ public class Test {
 
     private static List<String> getStringBuilder(String[] arr, int size) {
         List<String> stringList = new ArrayList<>();
-        Arrays.sort(arr);
         int length = arr[0].length();
         for (int i = 0; i < length; i++) {
             if (arr[0].charAt(i) == arr[size - 1].charAt(i)) {
@@ -25,3 +24,5 @@ public class Test {
         return stringList;
     }
 }
+
+    
