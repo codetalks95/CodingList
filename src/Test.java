@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Test {
@@ -6,6 +7,7 @@ public class Test {
         String[] arr = {"WelcomeJava", "WelcomePython", "WelcomeRuby"};
         int size = arr.length;
         List<String> res = getStringBuilder(arr, size);
+        System.out.println("Longest Common Prefix in the Array is: " + Arrays.toString(res.toArray()));
         String finalResult = String.join("", res);
         System.out.println("Longest Common Prefix in the Array is: " + finalResult);
     }
