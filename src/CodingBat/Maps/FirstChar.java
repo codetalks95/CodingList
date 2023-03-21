@@ -6,7 +6,6 @@ import java.util.Map;
 public class FirstChar {
     public static void main(String[] args) {
         System.out.println("HashMap Results are" + " " + pairsMap(new String[]{"aa", "bb", "cc", "aAA", "cCC", "d"}));
-        System.out.println("Concat Map Results are" + " " + concatCharacterMap(new String[]{"aa"}));
     }
 
     public static Map<String, String> pairsMap(String[] strings) {
@@ -28,6 +27,16 @@ public class FirstChar {
     }
 
     public static Map<String, String> concatCharacterMap(String[] strings) {
+        Map<String, String> integerMap = new HashMap<>();
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].charAt(i) == strings[i].charAt(i + 1)) {
+                integerMap.put(String.valueOf(strings[i].charAt(0)), String.valueOf(strings[i].charAt(0)));
+            }
+        }
+        return integerMap;
+    }
+
+    public static Map<String, String> returnMap(String[] strings) {
         Map<String, String> integerMap = new HashMap<>();
         for (int i = 0; i < strings.length; i++) {
             if (strings[i].charAt(i) == strings[i].charAt(i + 1)) {
