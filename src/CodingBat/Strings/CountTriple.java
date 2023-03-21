@@ -6,7 +6,7 @@ import java.util.Map;
 public class CountTriple {
     public static void main(String[] args) {
         String str = "aaaXXXccc";
-        System.out.println("Count of the Number is" + "" + countTripe(str));
+        System.out.println("Count of the Number is" + " " + "" + countTripe(str));
     }
 
     private static Map<Character, Integer> countTripe(String str) {
