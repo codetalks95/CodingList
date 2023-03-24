@@ -1,5 +1,6 @@
 package CodingBat.Maps;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,38 +10,22 @@ public class FirstChar {
     }
 
     public static Map<String, String> pairsMap(String[] strings) {
+        System.out.println("Arrays are" + " " + Arrays.toString(Arrays.stream(strings).toArray()));
         Map<String, String> integerMap = new HashMap<>();
-        String str, val;
+        String str;
         for (int i = 0; i < strings.length; i++) {
+            if (i == strings.length - 1) {
+                integerMap.put(String.valueOf(strings[i].charAt(0)), String.valueOf(strings[strings.length - 1]));
+            }
             for (int j = i + 1; j < strings.length; j++) {
                 String[] stringsData = new String[1];
                 stringsData[0] = strings[i];
                 str = strings[i] + strings[j];
                 if (strings[i].charAt(0) == strings[j].charAt(0)) {
-                    char ch = strings[i].charAt(0);
-                    val = concatCharacterMap(stringsData).get(Character.toString(ch));
-                    integerMap.put(String.valueOf(strings[i].charAt(0)), val + str);
+                    integerMap.put(String.valueOf(strings[i].charAt(0)), str);
+                } else {
+                    integerMap.put(String.valueOf(strings[i].charAt(0)), strings[i]);
                 }
-            }
-        }
-        return integerMap;
-    }
-
-    public static Map<String, String> concatCharacterMap(String[] strings) {
-        Map<String, String> integerMap = new HashMap<>();
-        for (int i = 0; i < strings.length; i++) {
-            if (strings[i].charAt(i) == strings[i].charAt(i + 1)) {
-                integerMap.put(String.valueOf(strings[i].charAt(0)), String.valueOf(strings[i].charAt(0)));
-            }
-        }
-        return integerMap;
-    }
-
-    public static Map<String, String> returnMap(String[] strings) {
-        Map<String, String> integerMap = new HashMap<>();
-        for (int i = 0; i < strings.length; i++) {
-            if (strings[i].charAt(i) == strings[i].charAt(i + 1)) {
-                integerMap.put(String.valueOf(strings[i].charAt(0)), String.valueOf(strings[i].charAt(0)));
             }
         }
         return integerMap;

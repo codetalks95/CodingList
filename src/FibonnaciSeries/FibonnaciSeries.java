@@ -10,7 +10,7 @@ public class FibonnaciSeries {
     }
 
     private static void fibonnaciSeries(int range) {
-        int a = 0, b = 0, c = 1;
+        int a, b = 0, c = 1;
         System.out.print("Fibonacci Series:");
         for (int i = 1; i <= range; i++) {
             a = b;
