@@ -1,8 +1,10 @@
+package SimpleJavaPrograms;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Test {
+public class LongestPrefix {
     public static void main(String[] args) {
         String[] arr = {"WelcomeJava", "WelcomePython", "WelcomeRuby"};
         int size = arr.length;
