@@ -11,11 +11,11 @@ public class DistanceElement {
             ints[i] = random.nextInt(100);
         }
         System.out.println(Arrays.toString(Arrays.stream(ints).toArray()));
-        System.out.println("Distance Between Element is:-" + " " + distanceBetweenElement(ints));
+        System.out.println("Distance Between Element is::" + " " + distanceBetweenElement(ints));
     }
 
     private static int distanceBetweenElement(int[] ints) {
-        int number = 0;
+        int number;
         int nextNum = new Random().nextInt(ints.length);
         int nextNumber = ints[nextNum];
         System.out.println("Next Number is" + " " + nextNumber);
