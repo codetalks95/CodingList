@@ -31,7 +31,6 @@ public class WordAppend {
     }
 
     public static Map<String, String> appendElement(Map<String, Integer> integerMap) {
-        StringBuilder stringBuilder = new StringBuilder();
         Map<String, String> stringStringMap = new HashMap<>();
         for (Map.Entry<String, Integer> entry : integerMap.entrySet()) {
             if (checkIfNumberIsEven(entry.getValue())) {
