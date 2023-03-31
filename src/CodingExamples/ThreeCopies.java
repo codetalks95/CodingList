@@ -18,7 +18,7 @@ public class ThreeCopies {
     }
 
     private static String addStringElement(String sElement) {
-        return sElement + sElement + sElement;
+        return sElement.repeat(3);
     }
 }
 
