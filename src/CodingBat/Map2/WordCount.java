@@ -12,7 +12,7 @@ public class WordCount {
     public static Map<Character, Integer> wordCount(String[] strings) {
         Map<Character, Integer> integerMap = new HashMap<>();
         for (String str : strings) {
-            Map<Character, Integer> integerMaps = new HashMap<>();
+            Map<Character, Integer> integerMaps;
             integerMaps = frequencyOfCharacter(str);
             integerMap.putAll(integerMaps);
         }
