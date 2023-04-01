@@ -18,10 +18,6 @@ public class FirstChar {
                 integerMap.put(String.valueOf(strings[i].charAt(0)), String.valueOf(strings[strings.length - 1]));
             }
             for (int j = i + 1; j < strings.length; j++) {
-                String[] stringsData = new String[1];
-                for (int k = 0; k < stringsData.length; k++) {
-                    stringsData[0]= strings[i];
-                }
                 str = strings[i] + strings[j];
                 if (strings[i].charAt(0) == strings[j].charAt(0)) {
                     integerMap.put(String.valueOf(strings[i].charAt(0)), str);
