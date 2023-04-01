@@ -19,7 +19,9 @@ public class FirstChar {
             }
             for (int j = i + 1; j < strings.length; j++) {
                 String[] stringsData = new String[1];
-                stringsData[0] = strings[i];
+                for (int k = 0; k < stringsData.length; k++) {
+                    stringsData[0]= strings[i];
+                }
                 str = strings[i] + strings[j];
                 if (strings[i].charAt(0) == strings[j].charAt(0)) {
                     integerMap.put(String.valueOf(strings[i].charAt(0)), str);
