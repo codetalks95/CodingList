@@ -1,0 +1,7 @@
+package CodingBat.String1;
+
+public class HelloName {
+    public static void main(String[] args) {
+
+    }
+}

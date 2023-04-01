@@ -1,12 +1,12 @@
-package CodingBat.Strings;
+package CodingBat.String1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EqualIsNot {
+public class CountYZ {
     public static void main(String[] args) {
         String[] words = {"fez day"};
-        System.out.println("Count is" + " " + countYZ(words));
+        System.out.println(countYZ(words));
     }
 
     private static int countYZ(String[] words) {

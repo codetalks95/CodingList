@@ -1,4 +1,4 @@
-package CodingBat.Strings;
+package CodingBat.String1;
 
 import java.util.ArrayList;
 import java.util.List;
