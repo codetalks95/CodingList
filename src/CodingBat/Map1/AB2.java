@@ -6,20 +6,14 @@ import java.util.Map;
 public class AB2 {
     public static void main(String[] args) {
         Map<String, String> myMap = createMap();
-        System.out.println("Map Produced for ab4Logic is::" + ab4Logic(myMap));
+        System.out.println("Map Produced for ab2Logic is::" + ab2Logic(myMap));
     }
 
-    private static Map<String, String> ab4Logic(Map<String, String> myMap) {
-        if (myMap.size() >= 3) {
-            if (myMap.get("a").length() != myMap.get("b").length()) {
-                if (myMap.get("a").length() > myMap.get("b").length()) {
-                    myMap.put("c", myMap.get("a"));
-                } else if (myMap.get("a").length() < myMap.get("b").length()) {
-                    myMap.put("c", myMap.get("b"));
-                }
-            } else {
-                myMap.put("a", " ");
-                myMap.put("b"," ");
+    private static Map<String, String> ab2Logic(Map<String, String> myMap) {
+        if (!myMap.isEmpty()) {
+            if (myMap.get("a") != null && myMap.get("b") != null && myMap.get("a").equals(myMap.get("b"))) {
+                myMap.remove("a");
+                myMap.remove("b");
             }
         }
         return myMap;
@@ -28,7 +22,7 @@ public class AB2 {
     private static Map<String, String> createMap() {
         Map<String, String> myMap = new HashMap<String, String>();
         myMap.put("a", "aaa");
-        myMap.put("b", "bbb");
+        myMap.put("b", "aaa");
         myMap.put("c", "cake");
         return myMap;
     }

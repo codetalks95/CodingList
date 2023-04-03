@@ -6,20 +6,21 @@ import java.util.Map;
 public class AB3 {
     public static void main(String[] args) {
         Map<String, String> myMap = createMap();
-        System.out.println("Map Produced for ab4Logic is::" + ab4Logic(myMap));
+        System.out.println("Map Produced for ab3Logic is::" + ab3Logic(myMap));
     }
 
-    private static Map<String, String> ab4Logic(Map<String, String> myMap) {
-        if (myMap.size() >= 3) {
-            if (myMap.get("a").length() != myMap.get("b").length()) {
-                if (myMap.get("a").length() > myMap.get("b").length()) {
-                    myMap.put("c", myMap.get("a"));
-                } else if (myMap.get("a").length() < myMap.get("b").length()) {
-                    myMap.put("c", myMap.get("b"));
-                }
+    private static Map<String, String> ab3Logic(Map<String, String> myMap) {
+        if (!myMap.isEmpty()) {
+            if ((myMap.containsKey("a") && myMap.containsKey("b"))) {
+                return myMap;
             } else {
-                myMap.put("a", " ");
-                myMap.put("b"," ");
+                if (myMap.containsKey("a") || myMap.containsKey("b")) {
+                    if (myMap.containsKey("a")) {
+                        myMap.put("b", myMap.get("a"));
+                    } else if (myMap.containsKey("b")) {
+                        myMap.put("a", myMap.get("b"));
+                    }
+                }
             }
         }
         return myMap;
