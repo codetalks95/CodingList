@@ -24,7 +24,7 @@ public class Topping2 {
     }
 
     private static Map<String, String> createMap() {
-        Map<String, String> myMap = new HashMap<String, String>();
+        Map<String, String> myMap = new HashMap<>();
         myMap.put("spinach", "dirt");
         myMap.put("ice-cream", "cherry");
         return myMap;
