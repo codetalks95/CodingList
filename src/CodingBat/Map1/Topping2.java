@@ -11,13 +11,13 @@ public class Topping2 {
 
     private static Map<String, String> topping2Logic(Map<String, String> myMap) {
         if (myMap.size() > 0) {
-            if (myMap.get("salad") != null && myMap.get("potato") != null) {
-                myMap.put("fries", myMap.get("potato"));
-                myMap.put("spinach", myMap.get("salad"));
-            } else if (myMap.get("salad") != null) {
-                myMap.put("spinach", myMap.get("salad"));
-            } else if (myMap.get("potato") != null) {
-                myMap.put("fries", myMap.get("potato"));
+            if (myMap.get("ice-cream") != null && myMap.get("spinach") != null) {
+                myMap.put("yogurt", myMap.get("ice-cream"));
+                myMap.put("spinach","nuts");
+            } else if (myMap.get("spinach") != null) {
+                myMap.put("nuts", myMap.get("spinach"));
+            } else if (myMap.get("ice-cream") != null) {
+                myMap.put("yogurt", myMap.get("ice-cream"));
             }
         }
         return myMap;
@@ -25,8 +25,8 @@ public class Topping2 {
 
     private static Map<String, String> createMap() {
         Map<String, String> myMap = new HashMap<String, String>();
-        myMap.put("salad", "oil");
-        myMap.put("potato", "ketchup");
+        myMap.put("spinach", "dirt");
+        myMap.put("ice-cream", "cherry");
         return myMap;
     }
 }
