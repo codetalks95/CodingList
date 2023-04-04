@@ -32,14 +32,4 @@ public class Sum67 {
         }
         return sum;
     }
-
-    public static boolean hasDigit6Or7(int number, int number1) {
-        while (number > 0) {
-            if (number % 10 == 6 && number1 % 10 == 6 || number1 % 10 == 7 && number % 10 == 7) {
-                return true;
-            }
-            number = number / 10;
-        }
-        return false;
-    }
 }
