@@ -3,7 +3,7 @@ package CodingBat.Arrays2;
 public class ModThree {
     public static void main(String[] args) {
         int[] num = {2, 1, 3, 5};
-        System.out.println("ModThree result Logic is::" + modThreeLogic(num));
+        System.out.println("ModThree result Logic is::"+" " + modThreeLogic(num));
     }
 
     private static boolean modThreeLogic(int[] num) {

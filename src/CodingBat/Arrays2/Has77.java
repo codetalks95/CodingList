@@ -3,7 +3,7 @@ package CodingBat.Arrays2;
 public class Has77 {
     public static void main(String[] args) {
         int[] num = {1, 7, 1, 1, 7};
-        System.out.println("Sum2 result Logic is::" + has77Logic(num));
+        System.out.println("Has77 result Logic is::" + has77Logic(num));
     }
 
     private static boolean has77Logic(int[] num) {

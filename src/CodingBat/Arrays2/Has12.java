@@ -6,7 +6,7 @@ import java.util.List;
 public class Has12 {
     public static void main(String[] args) {
         int[] num = {1, 3, 1};
-        System.out.println("Has22 result Logic is::" + has22Logic(num));
+        System.out.println("Has12 result Logic is::" + has22Logic(num));
     }
 
     private static boolean has22Logic(int[] num) {
