@@ -6,7 +6,7 @@ import java.util.List;
 public class No23 {
     public static void main(String[] args) {
         int[] num = {4, 5};
-        System.out.println("PlusTwo Logic result Logic is::" + no23Logic(num));
+        System.out.println("No23 Logic result Logic is::" + no23Logic(num));
 
     }
 

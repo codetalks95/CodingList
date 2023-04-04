@@ -1,12 +1,9 @@
 package CodingBat.Arrays1;
 
-import java.util.Arrays;
-
 public class Sum3 {
     public static void main(String[] args) {
         int[] num = {1, 2, 3};
         System.out.println("Sum3 result Logic is::" + sum3Logic(num));
-
     }
 
     private static int sum3Logic(int[] num) {

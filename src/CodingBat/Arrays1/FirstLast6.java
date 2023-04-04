@@ -4,7 +4,6 @@ public class FirstLast6 {
     public static void main(String[] args) {
         int[] num = { 6, 1, 2, 3};
         System.out.println("FirstLast6 result Logic is::" + firstLast6LogicIs(num));
-
     }
 
     private static boolean firstLast6LogicIs(int[] num) {

@@ -6,8 +6,7 @@ import java.util.List;
 public class Reverse3 {
     public static void main(String[] args) {
         int[] num = {5, 11, 9};
-        System.out.println("RotateLeft3 result Logic is::" + rotateLeft3LogicIs(num));
-
+        System.out.println("Reverse result Logic is::" + rotateLeft3LogicIs(num));
     }
 
     private static List<Integer> rotateLeft3LogicIs(int[] num) {

@@ -7,7 +7,6 @@ public class Front11 {
     public static void main(String[] args) {
         int[][] num = {{1, 2, 3}, {}};
         System.out.println("Front11 result Logic is::" + frontEndLogicIs(num));
-
     }
 
     private static List<Integer> frontEndLogicIs(int[][] num) {

@@ -6,7 +6,7 @@ import java.util.List;
 public class MiddleWay {
     public static void main(String[] args) {
         int[][] num = {{1, 2, 3}, {4, 5, 6}};
-        System.out.println("Sum3 result Logic is::" + sum3(num));
+        System.out.println("MiddleWay Logic result is::" + sum3(num));
 
     }
 

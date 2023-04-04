@@ -6,8 +6,7 @@ import java.util.List;
 public class Start1 {
     public static void main(String[] args) {
         int[][] num = {{1, 2, 1, 2, 3, 1}, {1, 3, 2, 1}};
-        System.out.println("Sum3 result Logic is::" + sum3(num));
-
+        System.out.println("Start1 result Logic is::" + sum3(num));
     }
 
     private static double sum3(int[][] num) {
