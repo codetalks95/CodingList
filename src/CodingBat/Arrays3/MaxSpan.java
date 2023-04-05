@@ -7,7 +7,16 @@ public class MaxSpan {
     }
 
     private static Integer maxSpanLogic(int[] num) {
-        return null;
+        int max = 0;
+        for (int i = 0; i < num.length; i++) {
+            int j = num.length - 1;
+            while (num[i] != num[j]) {
+                j--;
+            }
+            int span = j - i + 1;
+            if (span > max) max = span;
+        }
+        return max;
     }
 }
 
