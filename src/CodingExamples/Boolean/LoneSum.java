@@ -1,4 +1,4 @@
-package CodingBat.Boolean;
+package CodingExamples.Boolean;
 
 import java.util.*;
 import java.util.stream.Collectors;

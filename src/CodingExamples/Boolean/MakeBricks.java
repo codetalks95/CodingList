@@ -1,4 +1,4 @@
-package CodingBat.Boolean;
+package CodingExamples.Boolean;
 
 public class MakeBricks {
     public static void main(String[] args) {
