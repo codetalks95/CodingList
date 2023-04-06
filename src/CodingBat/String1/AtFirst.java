@@ -6,7 +6,7 @@ import java.util.List;
 public class AtFirst {
     public static void main(String[] args) {
         String strings = "H";
-        System.out.println("Without end Logic is::" + " " + atFirstLogic(strings));
+        System.out.println("AtFirst Logic is::" + " " + atFirstLogic(strings));
     }
 
     private static String atFirstLogic(String strings) {
